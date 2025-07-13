@@ -12,13 +12,13 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-4xl">
           <h1 className="text-5xl mb-8 leading-tight">
-            Hello, I'm <br />
+            Hello, I&apos;m <br />
             <span className="font-bold">Nathan 👋</span>
           </h1>
           <div className="flex flex-row gap-4 justify-center mt-8">
             <Button
               href="https://github.com/quiteboringv2"
-              className="border-2 border-gray-600 text-gray-300 hover:bg-gray-600 hover:text-white"
+              className="border-2 border-slate-800 text-gray-300 hover:bg-slate-800 hover:text-white"
             >
               <FaGithub className="w-5 h-5" />
               GitHub
