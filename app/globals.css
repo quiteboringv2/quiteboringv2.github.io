@@ -3,8 +3,6 @@
 :root {
   --background: #0E0E10;
   --foreground: #ededed;
-  --accent: #6366f1;
-  --secondary: #8b5cf6;
 }
 
 * {
@@ -21,33 +19,6 @@ body {
   line-height: 1.6;
 }
 
-body::after {
-  width: 80vw;
-  height: 80vw;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
-  bottom: -40vw;
-  right: -10vw;
-  animation: pulse 6s ease-in-out infinite reverse;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.1) rotate(180deg); }
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--accent), var(--secondary));
-  border-radius: 4px;
-}
-
 .grid-overlay {
   position: fixed;
   top: 0;
@@ -55,7 +26,7 @@ body::after {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 2;
+  z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -81,4 +52,9 @@ body::after {
                                 rgba(0,0,0,0.8) 30%, 
                                 rgba(0,0,0,0.2) 70%, 
                                 transparent 100%);
+}
+
+h1, h2, h3, p, span, button, a {
+  position: relative;
+  z-index: 10;
 }

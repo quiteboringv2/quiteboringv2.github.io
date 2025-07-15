@@ -35,7 +35,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen relative z-10">
+    <div className="min-h-screen">
       <div className="grid-overlay" ref={gridRef}>
         <div className="grid-pattern"></div>
       </div>
@@ -49,7 +49,7 @@ export default function Home() {
           <div className="flex flex-row gap-4 justify-center mt-8">
             <Button
               href="https://github.com/quiteboringv2"
-              className="border-2 border-slate-800 text-gray-300 hover:bg-slate-800 hover:text-white"
+              className="border-2 border-zinc-900 text-gray-300 bg-[#0E0E10] hover:bg-zinc-900 hover:text-white"
             >
               <FaGithub className="w-5 h-5" />
               GitHub
