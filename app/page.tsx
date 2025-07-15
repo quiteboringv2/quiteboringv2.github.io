@@ -1,13 +1,44 @@
 "use client";
+
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Button } from "@/app/components/button";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (gridRef.current) {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+
+        gridRef.current.style.setProperty("--mouse-x", `${x}%`);
+        gridRef.current.style.setProperty("--mouse-y", `${y}%`);
+        gridRef.current.classList.add("active");
+      }
+    };
+
+    const handleMouseLeave = () => {
+      if (gridRef.current) {
+        gridRef.current.classList.remove("active");
+      }
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen relative z-10">
-      <div className="floating-shape shape-1"></div>
-      <div className="floating-shape shape-2"></div>
-      <div className="floating-shape shape-3"></div>
+      <div className="grid-overlay" ref={gridRef}>
+        <div className="grid-pattern"></div>
+      </div>
 
       <section className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-4xl">
