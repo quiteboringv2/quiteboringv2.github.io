@@ -55,7 +55,7 @@ export default function Home() {
               GitHub
             </Button>
             <Button
-              href="https://cobalt.quiteboring.dev"
+              href="https://discord.gg/GAhS8UfDyy"
               className="bg-blue-500 text-white hover:bg-blue-600"
             >
               <FaExternalLinkAlt className="w-4 h-4" />
